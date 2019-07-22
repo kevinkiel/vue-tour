@@ -3441,6 +3441,9 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("1eb2");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("7f7f");
+
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0595ba96-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VTour.vue?vue&type=template&id=256d5e74&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"v-tour"},[_vm._t("default",_vm._l((_vm.steps),function(step,index){return (_vm.currentStep === index)?_c('v-step',{key:index,attrs:{"step":step,"previous-step":_vm.previousStep,"next-step":_vm.nextStep,"stop":_vm.stop,"is-first":_vm.isFirst,"is-last":_vm.isLast,"labels":_vm.customOptions.labels,"highlight":_vm.customOptions.highlight}}):_vm._e()}),{currentStep:_vm.currentStep,steps:_vm.steps,previousStep:_vm.previousStep,nextStep:_vm.nextStep,stop:_vm.stop,isFirst:_vm.isFirst,isLast:_vm.isLast,labels:_vm.customOptions.labels,highlight:_vm.customOptions.highlight})],2)}
 var staticRenderFns = []
@@ -3483,18 +3486,14 @@ function _objectSpread(target) {
 
   return target;
 }
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
 // CONCATENATED MODULE: ./src/shared/constants.js
-const DEFAULT_CALLBACKS = {
-  onStart: () => {},
-  onPreviousStep: (currentStep) => {},
-  onNextStep: (currentStep) => {},
-  onStop: () => {}
-}
-
-const DEFAULT_OPTIONS = {
+var DEFAULT_CALLBACKS = {
+  onStart: function onStart() {},
+  onPreviousStep: function onPreviousStep(currentStep) {},
+  onNextStep: function onNextStep(currentStep) {},
+  onStop: function onStop() {}
+};
+var DEFAULT_OPTIONS = {
   useKeyboardNavigation: true,
   startTimeout: 0,
   highlight: false,
@@ -3504,17 +3503,15 @@ const DEFAULT_OPTIONS = {
     buttonNext: 'Next',
     buttonStop: 'Finish'
   }
-}
-
-const HIGHLIGHT = {
+};
+var HIGHLIGHT = {
   ACTIVE_STEP: 'v-tour-highlight',
   ACTIVE_TOUR: 'v-tour-active',
   POSITION_CLASS: 'v-tour-position',
   TRANSITION: ', box-shadow 0s ease-in-out 0s',
   POSITIONS: ['absolute', 'relative', 'fixed', 'sticky']
-}
-
-const DEFAULT_STEP_OPTIONS = {
+};
+var DEFAULT_STEP_OPTIONS = {
   placement: 'bottom',
   enableScrolling: true,
   modifiers: {
@@ -3522,14 +3519,12 @@ const DEFAULT_STEP_OPTIONS = {
       element: '.v-step__arrow'
     }
   }
-}
-
-const KEYS = {
+};
+var KEYS = {
   ARROW_RIGHT: 39,
   ARROW_LEFT: 37,
   ESCAPE: 27
-}
-
+};
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VTour.vue?vue&type=script&lang=js&
 
 
@@ -4179,22 +4174,19 @@ VStep_component.options.__file = "VStep.vue"
 
 
 
-const VueTour = {
-  install (Vue, options) {
-    Vue.component(VTour.name, VTour)
-    Vue.component(VStep.name, VStep)
+var VueTour = {
+  install: function install(Vue, options) {
+    Vue.component(VTour.name, VTour);
+    Vue.component(VStep.name, VStep); // Object containing Tour objects (see VTour.vue) where the tour name is used as key
 
-    // Object containing Tour objects (see VTour.vue) where the tour name is used as key
-    Vue.prototype.$tours = {}
+    Vue.prototype.$tours = {};
   }
-}
-
+};
 /* harmony default export */ var main = (VueTour);
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VueTour)
+  window.Vue.use(VueTour);
 }
-
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 
